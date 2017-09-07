@@ -1,0 +1,23 @@
+table
+      tbody
+        tr
+          th #
+          th Product Name
+          th Company_Name
+          th Home_Page_View
+          th State
+          th City
+          th No_of_months
+          th No
+
+
+        each item in data
+         tr
+           td #{item['id']}
+           td #{item['Provider']}
+           td #{item['Company_Name']}
+           td #{item['Home_Page_View']}
+           td #{item['State']}
+           td #{item['City']}
+           td #{item['No_of_months']}
+           td #{item['No']}

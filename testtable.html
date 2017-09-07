@@ -1,0 +1,39 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script>
+
+$(function() {
+
+var entries = [];
+
+var dmJSON = "http://localhost:8012/list?callback=?";
+$.getJSON( dmJSON, function(data) {
+   $.each(data.entries, function(i, f) {
+      var tblRow = "<tr>" + "<td>" + f.id + "</td>" + "<td>" + f.user.Provider + "</td>" + "<td>" + f.Company_Name + "</td>" + "<td> " + f.Home_Page_View + "</td>" +  "<td>" + f.State + "</td>" + "<td>" + f.City + "</td>"+"<td>" + f.No_of_months + "</td>"+"</tr>"
+       $(tblRow).appendTo("#entrydata tbody");
+ });
+
+});
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+<table id= "entrydata" border="1">
+<thead>
+        <th>ID</th>
+        <th>Provider</th>
+        <th>Company_Name</th>
+    <th>Home_Page_View</th>
+        <th>State</th>
+       <th> City</th>
+       <th>No_of_months</th>
+    </thead>
+  <tbody>
+
+   </tbody>
+</table>
